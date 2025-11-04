@@ -103,15 +103,15 @@ Cette commande installe les composants de WSL, et vous permettra de réaliser le
 
 ### Configuration d'une VM WSL2
 
-Nous allons réaliser les manipulations de ce TP en utilisant le WSL2. Il s'agit d'une machine virtuelle linux intégrée au système Windows. Ouvrez une invite de commande Windows (PowerShell), puis tapez la commande suivante pour installer une distribution Debian pour votre future machine virtuelle :
+Nous allons réaliser les manipulations de ce TP en utilisant le WSL2. Il s'agit d'une machine virtuelle linux intégrée au système Windows. Ouvrez une invite de commande Windows (PowerShell), puis tapez la commande suivante pour installer une distribution Ubuntu pour votre future machine virtuelle :
 
 ```bash
-wsl --install Debian
+wsl --install Ubuntu
 ```
 Une fois la distribution installée, vous pouvez lancer une nouvelle machine virtuelle en exécutant la commande :
 
 ```bash
-wsl -d Debian
+wsl -d Ubuntu
 ```
 
 Vous êtes alors invité à choisir un nom d'utilisateur ainsi qu'un mot de passe. Choisissez des identifiants courts afin de pouvoir les taper à plusieurs reprises sans complications. Une fois l'installation terminée, vous devez être en mesure de taper des commandes linux dans la console. L'affichage du début de ligne de l'invite de commande doit refléter le changement d'environnement. Vous pouvez maintenant exécuter les commandes suivantes pour terminer la configuration de la machine virtuelle :
@@ -206,12 +206,12 @@ source venv/bin/activate
 
 Depuis un terminal d'une machine virtuelle, vous pouvez quitter celle-ci en tapant la commande `exit`. Vous quitterez également la machine virtuelle si vous êtes emmené à fermer le terminal.
 
-Pour se reconnecter à une machine virtuelle, il faut connaître le nom de la ditribution de celle-ci (par exemple `Debian` dans le cas de la machine virtuelle décrite ci-dessous comme notre environnement de développement), ainsi que le nom d'utilisateur que vous aviez choisi pour cette machine virtuelle.
+Pour se reconnecter à une machine virtuelle, il faut connaître le nom de la ditribution de celle-ci (par exemple `Ubuntu` dans le cas de la machine virtuelle décrite ci-dessous comme notre environnement de développement), ainsi que le nom d'utilisateur que vous aviez choisi pour cette machine virtuelle.
 
-Par exemple, pour me connecter à une machine virtuelle `Debian` avec l'utilisateur `louis`, j'exécuterai alors la commande :
+Par exemple, pour me connecter à une machine virtuelle `Ubuntu` avec l'utilisateur `louis`, j'exécuterai alors la commande :
 
 ```bash
-wsl --distribution Debian --user louis
+wsl --distribution Ubuntu --user louis
 ```
 
 Pour retourner à l'intérieur de votre espace personnel sur la VM, vous pouvez finalement exécuter la commande :
@@ -229,17 +229,17 @@ Si vous souhaitez sauvegarder un état de votre machine virtuelle (par exemple, 
 Une fois votre machine virtuelle éteinte, exécutez la commande suivante dans une invite de commande Windows : 
 
 ```bash
-wsl --export Debian debian-dev.tar
+wsl --export Ubuntu ubuntu-dev.tar
 ```
 
-Vous devriez voir apparaître un fichier `debian-dev.tar` faisant quelques gigaoctets. Il s'agit du fichier à conserver dans un endroit sûr.
+Vous devriez voir apparaître un fichier `ubuntu-dev.tar` faisant quelques gigaoctets. Il s'agit du fichier à conserver dans un endroit sûr.
 
 > Si vous travaillez sur les machines de l'université, placez ce fichier sur le réseau (lecteur **H:**) ou sur un emplacement cloud personnel. Un fichier laissé sur le lecteur **C:** ne sera pas forcément acessible lors de votre prochaine connexion.
 
 Afin de charger votre machine virtuelle sauvegardée, lors d'une utilisation ultérieure, vous pourrez utiliser la commande suivante :
 
 ```bash
-wsl --import Debian-dev DebianDev debian-dev.tar
+wsl --import Ubuntu-dev UbuntuDev ubuntu-dev.tar
 ```
 
 > Si vous travaillez sur les machines de l'université, exécutez cette commande sur le lecteur local **C:** (par exemple dans vos documents). Il vous manquera des droits si vous cherchez à réaliser cette opération drectement sur le réseau.
@@ -249,7 +249,7 @@ Le premier paramètre de cette commande est le nom que portera la distribution d
 Pour lancer la machine virtuelle importée, il vous suffira alors de taper la commande :
 
 ```bash
-wsl --distribution Debian-dev --user [NOM UTILISATEUR]
+wsl --distribution Ubuntu-dev --user [NOM UTILISATEUR]
 ```
 
 Puis tapez la commande :
