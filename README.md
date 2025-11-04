@@ -153,9 +153,11 @@ Enfin, il faut signaler à GitHub que cette clé vous identifie comme un utilisa
 Vous êtes maintenant en mesure de développer dans l'environnement de la machine virtuelle, et de pousser vos modifications vers le dépôt stocké sur GitHub. Téléchargez tout d'abord le dépôt dans votre environnement de développement. La commande `git clone` permet de copier localement un dépôt désigné par son URL. Exécutez les commandes suivantes, en remplaçant par le nom d'utilisateur GitHub du détenteur du fork :
 
 ```bash
+cd ~
 git clone git@github.com:[NOM UTILISATEUR]/PowerGridStudent.git
 cd PowerGridStudent
 ```
+La première commande déplace votre terminal vers votre dossier personnel, où vous avez les droits d'écriture, la deuxième clone le projet dans ce dossier et la troisième place le terminal dans le dossier du projet.
 
 Vous avez maintenant cloné le dépôt de code PowerGrid dans votre machine virtuelle, et avez déplacé votre terminal à l'intérieur du répertoire ainsi créé. Il vous est maintenant possible d'ouvrir et de modifier les différents fichiers du projet. Cependant, vous n'avez pas encore défini d'identifiants au sein de git vous permettant de créer et pousser de nouveaux commits. Pour ce faire, exécutez les commandes suivantes, en remplaçant avec votre identité :
 
