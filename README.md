@@ -397,6 +397,14 @@ Vous pouvez maintenant créer un utilisateur administrateur pour Jenkins. Cette 
 
 **Vous disposez maintenant d'une installation viable de Jenkins au sein d'une machine virtuelle, il vous est conseillé de penser à réaliser des sauvegardes de celle-ci en suivant les instructions dispensées dans la [section correspondante](#export-wsl)**
 
+Les commandes d'export de votre machine virtuelle pourront ressembler à :
+
+```bash
+wsl --export Ubuntu-22.04 ubuntu-jenkins.tar
+```
+
+Le fichier ubuntu-jenkins.tar peut être sauvegardé et importé ultérieurement.
+
 <a name="jenkins-pipeline" />
 
 ### Configuration du pipeline Jenkins
