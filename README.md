@@ -130,7 +130,7 @@ Ces commandes doivent mettre à jour la machine virtuelle, et installer Git et P
 
 ### Création de clés SSH pour l'authentification avec GitHub
 
-Votre invite de commande est maintenant située à l'intérieur d'une machine virtuelle configurée pour le développement Python. Vous pourrez bientôt télécharger le projet PowerGrid pour commencer à programmer. Cependant, l'utilisateur de la machine virtuelle ne possède pas encore les droits nécessaires pour pousser des modifications vers le dépôt sur GitHub. GitHub gère les droits de modification à partir de jeux de clés cryptographiques générés par un utilisateur pour garantir son identité. Linux dispose d'une commande permettant de générer une clé de chiffrement. Celle-ci vous permettra de confirmer votre identité au site GitHub. Exécutez tout d'abord la commande suivante, en acceptant le chemin par défaut pour les fichiers générés (tapez ENTRÉE), et en choisissant un mot de passe simple pour la clé SSH :
+Votre invite de commande est maintenant située à l'intérieur d'une machine virtuelle configurée pour le développement Python. Vous pourrez bientôt télécharger le projet PowerGrid pour commencer à programmer. Cependant, l'utilisateur de la machine virtuelle ne possède pas encore les droits nécessaires pour pousser des modifications vers le dépôt sur GitHub. GitHub gère les droits de modification à partir de jeux de clés cryptographiques générés par un utilisateur pour garantir son identité. Linux dispose d'une commande permettant de générer une clé de chiffrement. Celle-ci vous permettra de confirmer votre identité au site GitHub. Exécutez tout d'abord la commande suivante, **en acceptant le chemin par défaut pour les fichiers générés (tapez ENTRÉE)**, et en choisissant un mot de passe simple pour la clé SSH :
 
 ```bash
 ssh-keygen -t ed25519 -C "prenom.nom@etudiant.univ-rennes.fr"
@@ -227,11 +227,17 @@ cd ~
 
 #### Export d'une machine virtuelle pour réutilisation ultérieure
 
-> Note : Cette section est principalement à destination des étudiants ayant choisi de développer en utilisant les machines de l'université, les autres étudiants peuvent ignorer ces instructions.
+> Note : Cette section est principalement à destination des étudiants ayant choisi de développer en utilisant les machines de l'université. Pour les autres étudiants, les machines virtuelles WSL sont conservées en l'état d'un allumage à l'autre de l'ordinateur, il est donc moins critique de les sauvegarder entre deux séances de TP.
 
 Si vous souhaitez sauvegarder un état de votre machine virtuelle (par exemple, dans le cas des ordinateurs de l'université qui sont réinitialisés à chaque déconnexion), vous pouvez exporter la machine virtuelle vers un fichier au moyen d'une commande. Vous pourrez alors stocker ce fichier à un endroit sécurisé et demander à wsl de le charger lors d'une utilisation ultérieure.
 
-Une fois votre machine virtuelle éteinte, exécutez la commande suivante dans une invite de commande Windows, en remplaçant `Ubuntu` par le nom de votre machine virtuelle à sauvegarder, et `ubuntu-dev` par le nom du fichier dans lequel vous voulez sauvegarder la machine virtuelle : 
+Pour commencer, demandez à wsl de lister les machines virtuelles existant sur votre système :
+
+```bash
+wsl --list
+```
+
+Une fois votre machine virtuelle identifiée parmi les noms existants, exécutez la commande suivante dans une invite de commande Windows, en remplaçant `Ubuntu` par le nom de votre machine virtuelle à sauvegarder, et `ubuntu-dev` par le nom du fichier dans lequel vous voulez sauvegarder la machine virtuelle : 
 
 ```bash
 wsl --export Ubuntu ubuntu-dev.tar
@@ -333,7 +339,7 @@ su - jenkins
 
 L'invite de commande devrait montrer un changement d'utilisateur.
 
-Vous devez maintenant créer des identifiants SSH à l'utilisateur `jenkins`, afin que celui-ci puisse s'identifier auprès de GitHub pour collecter les modifications apportées à notre dépôt de code. Générez une nouvelle paire de clés SSH pour l'utilisateur `jenkins` avec la commande suivante (encore une fois, acceptez l'emplacement par défaut pour la clé en appuyant sur ENTRÉE) :
+Vous devez maintenant créer des identifiants SSH à l'utilisateur `jenkins`, afin que celui-ci puisse s'identifier auprès de GitHub pour collecter les modifications apportées à notre dépôt de code. Générez une nouvelle paire de clés SSH pour l'utilisateur `jenkins` avec la commande suivante (**encore une fois, acceptez l'emplacement par défaut pour la clé en appuyant sur ENTRÉE**) :
 
 ```bash
 ssh-keygen -t ed25519 -C "prenom.nom@etudiant.univ-rennes.fr"
