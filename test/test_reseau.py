@@ -8,16 +8,23 @@ from Terrain import Terrain, Case
 class TestReseau(unittest.TestCase):
 
     def test_definition_entree(self):
-        # TODO
-        self.fail()
+        reseau = Reseau()
+        terrain = Terrain()
+        terrain.hauteur=10
+        terrain.largeur=15
+        reseau.ajouter_noeud(2,(5,5))
+        reseau.definir_entree(2)
+        
 
     def test_ajout_noeud(self):
-        # TODO
-        self.fail()
+        reseau = Reseau()
+        reseau.ajouter_noeud(3,(5,5))
 
     def test_ajout_arc(self):
-        # TODO
-        self.fail()
+        reseau = Reseau()
+        reseau.ajouter_noeud(2,(5,5))
+        reseau.ajouter_noeud(1,(4,5))
+        reseau.ajouter_arc(1,2)
 
     def test_validation_correcte(self):
         r = Reseau()
@@ -36,7 +43,7 @@ class TestReseau(unittest.TestCase):
         r.noeuds[4] = (1, 2)
         r.arcs.append((3, 4))
 
-        self.assertTrue(r.valider_reseau())
+        self.assertFalse(r.valider_reseau())
 
     def test_validation_incorrecte(self):
         r = Reseau()

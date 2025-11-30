@@ -1,0 +1,55 @@
+| Action                        | Commande                          | Exemple de syntaxe                           |
+| ----------------------------- | --------------------------------- | -------------------------------------------- |
+| Voir l’état du projet         | `git status`                      | `git status`                                 |
+
+| Voir les fichiers modifiés    | `git diff`                        | `git diff`                                   |
+
+| Ajouter 1 fichier             | `git add <fichier>`               | `git add main.py`                            |
+
+| Ajouter tous les fichiers     | `git add .`                       | `git add .`                                  |
+
+| Faire un commit               | `git commit -m "message"`         | `git commit -m "corrige le bug X"`           |
+
+| Envoyer sur GitHub            | `git push origin <branche>`       | `git push origin master`                     |
+
+| Récupérer depuis GitHub       | `git pull origin <branche>`       | `git pull origin master`                     |
+
+| Récupérer toutes les branches | `git fetch --all`                 | `git fetch --all`                            |
+
+| Voir les branches             | `git branch`                      | `git branch`                                 |
+
+| Changer de branche            | `git switch <branche>`            | `git switch master`                          |
+
+| Créer une branche locale      | `git switch -c <branche>`         | `git switch -c dev`                          |
+
+| Voir l’historique des commits | `git log --oneline`               | `git log --oneline`                          |
+
+| Voir les remotes              | `git remote -v`                   | `git remote -v`                              |
+
+| Changer l’URL du remote       | `git remote set-url origin <url>` | `git remote set-url origin git@github.com:…` |
+
+
+definir_entree :
+	pour self.noeuds.keys() : renvoi les clé du dictionnaire nœuds ( la clé c'est le rang(l'id) du nœud en 	question )
+ 	0:(3,3) 0 est la clé de 3:3 dans le dictionnaire nœud par exemple. nœud 0 au coordonnées 3,3 du terrain.
+	donc la fonction "definir_entree" permet de placer l'entrée du réseau sur un nœud existant. 
+
+
+ajouter_noeud :
+	actuellement la fonction ne vérifie que si la clé entrée est positive pas si c'est un entier et s'il 	n'existe pas encore dans le réseau.
+
+ajouter_arc : OK
+
+set_strategie : OK
+
+valider_reseau : à faire 
+	pour valider le réseau, on doit regarder si le deuxième nœud de l'arc est le premier nœud 	d'un ou de  plusieurs arc.
+valider_distribution : à faire 
+	pour valider la distribution, il faut que un client soit sur un nœud et que tout les nœud 	soit connecter entre eux.
+
+configurer : OK
+
+
+
+
+

@@ -20,7 +20,7 @@ if __name__ == "__main__":
         print("Cout : {}M€".format(reseau.calculer_cout(terrain)))
         reseau.afficher_avec_terrain(terrain)
     else:
-        print("Pas de configuration valide trouvée.")
+        print("Pas de configuration valide trouvée..")
 
     print("======= Configuration Manuelle")
     reseau.set_strategie(StrategieReseauManuelle())
