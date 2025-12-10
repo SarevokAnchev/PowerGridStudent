@@ -36,6 +36,7 @@ class Terrain:
                 self.cases.append(ligne_cases)
                 if ligne_max < n:
                     ligne_max = n
+                    
         for i, l in enumerate(self.cases):
             while len(l) < ligne_max:
                 self.cases[i].append(Case.OBSTACLE)
