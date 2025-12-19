@@ -7,6 +7,7 @@ from Terrain import Terrain, Case
 class TestTerrain(unittest.TestCase):
 
     def test_chargement(self):
+<<<<<<< HEAD
             with open("terrain_test.txt", "w") as f:
                 f.write("E~\n")
                 f.write("C \n")
@@ -21,6 +22,10 @@ class TestTerrain(unittest.TestCase):
             self.assertEqual(t[0][1], Case.VIDE)
             self.assertEqual(t[1][0], Case.CLIENT)
             self.assertEqual(t[1][1], Case.OBSTACLE)
+=======
+        # TODO
+        self.fail()
+>>>>>>> c515d84 (Revert "Correction du test test_chargement")
 
     def test_accesseur(self):
         t = Terrain()
