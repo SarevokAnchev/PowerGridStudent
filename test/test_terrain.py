@@ -7,7 +7,6 @@ from Terrain import Terrain, Case
 class TestTerrain(unittest.TestCase):
 
     def test_chargement(self):
-        def testa_chargement(self):
             with open("terrain_test.txt", "w") as f:
                 f.write("E~\n")
                 f.write("C \n")
