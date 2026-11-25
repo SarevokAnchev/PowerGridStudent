@@ -277,12 +277,12 @@ wsl --list
 
 La machine virtuelle que vous souhaitez lancer doit se trouver dans la liste qui est retournée par cette commande.
 
-Pour se connecter à une machine virtuelle, il faut connaître le nom de celle-ci (par exemple `UbuntuDev` dans le cas de la machine virtuelle décrite ci-dessus comme notre environnement de développement), ainsi que le nom d'utilisateur que vous aviez choisi pour cette machine virtuelle.
+Pour se connecter à une machine virtuelle, il faut connaître le nom de celle-ci (par exemple `Ubuntu-dev` dans le cas de la machine virtuelle décrite ci-dessus comme notre environnement de développement), ainsi que le nom d'utilisateur que vous aviez choisi pour cette machine virtuelle.
 
-Par exemple, pour me connecter à une machine virtuelle `UbuntuDev` avec l'utilisateur `louis`, j'exécuterai alors la commande :
+Par exemple, pour me connecter à une machine virtuelle `Ubuntu-dev` avec l'utilisateur `louis`, j'exécuterai alors la commande :
 
 ```bash
-wsl --distribution UbuntuDev --user louis
+wsl --distribution Ubuntu-dev --user louis
 ```
 
 Pour retourner à l'intérieur de votre espace personnel sur la VM, vous pouvez finalement exécuter la commande :
