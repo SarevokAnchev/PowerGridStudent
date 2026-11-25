@@ -54,7 +54,10 @@ class Terrain:
         return clients
 
     def get_entree(self) -> tuple[int, int]:
-        # TODO
+        for i, l in enumerate(self.cases):
+            for j, c in enumerate(l):
+                if c == Case.ENTREE:
+                    return (i, j)
         return None
 
     def afficher(self):
