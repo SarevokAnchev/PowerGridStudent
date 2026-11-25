@@ -34,19 +34,42 @@ class Reseau:
         self.strat = strat
 
     def valider_reseau(self) -> bool:
-        # TODO
-        return False
+        if self.noeud_entree not in self.noeuds:
+            return False
+
+        voisins = {n: [] for n in self.noeuds}
+        for n1, n2 in self.arcs:
+            if n1 not in voisins or n2 not in voisins:
+                return False
+            voisins[n1].append(n2)
+            voisins[n2].append(n1)
+
+        visites = {self.noeud_entree}
+        a_visiter = [self.noeud_entree]
+        while a_visiter:
+            courant = a_visiter.pop(0)
+            for v in voisins[courant]:
+                if v not in visites:
+                    visites.add(v)
+                    a_visiter.append(v)
+
+        return len(visites) == len(self.noeuds)
 
     def valider_distribution(self, t: Terrain) -> bool:
-        # TODO
-        return False
+        nodes = [elt[1] for elt in self.noeuds.items()]
+        for client in t.get_clients():
+            if client not in nodes:
+                return False
+        return True
 
     def configurer(self, t: Terrain):
         self.noeud_entree, self.noeuds, self.arcs  = self.strat.configurer(t)
 
     def afficher(self) -> None:
-        # TODO
-        pass
+        print("\nRéseau :")
+        print(f"Noeud d'entrée : {self.noeud_entree}")
+        print(f"Noeuds :\n{self.noeuds}")
+        print(f"Arcs :\n{self.arcs}")
 
     def afficher_avec_terrain(self, t: Terrain) -> None:
         for ligne, l in enumerate(t.cases):
