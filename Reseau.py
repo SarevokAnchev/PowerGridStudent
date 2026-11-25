@@ -55,10 +55,12 @@ class Reseau:
 
         return len(visites) == len(self.noeuds)
 
-
     def valider_distribution(self, t: Terrain) -> bool:
-        # TODO
-        return False
+        nodes = [elt[1] for elt in self.noeuds.items()]
+        for client in t.get_clients():
+            if client not in nodes:
+                return False
+        return True
 
     def configurer(self, t: Terrain):
         self.noeud_entree, self.noeuds, self.arcs  = self.strat.configurer(t)
